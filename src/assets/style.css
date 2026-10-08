@@ -1,4 +1,24 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #f8f4ff;
+  --bg-strong: #f0eaff;
+  --panel: #ffffff;
+  --panel-alt: #f5f0ff;
+  --primary: #8b5cf6;
+  --primary-dark: #6d4ac7;
+  --primary-soft: #eadcff;
+  --text: #2d2140;
+  --muted: #625779;
+  --border: #e7dcff;
+  --shadow: rgba(109, 74, 199, 0.12);
+  --header-bg: #f3ebff;
+  --header-text: #2d2140;
+  --heading: #3a2b5b;
+  --footer-bg: #57408f;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,16 +29,17 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Manrope', 'Georgia', sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #263444;
-  background: #fff;
+  color: var(--text);
+  background: linear-gradient(180deg, #fdfbff 0%, var(--bg) 100%);
 }
 
 h1, h2, h3, h4 {
-  color: #173f70;
+  color: var(--heading);
   line-height: 1.3;
+  font-weight: 800;
 }
 
 p {
@@ -31,11 +52,11 @@ img {
 }
 
 a {
-  color: #173f70;
+  color: var(--primary-dark);
 }
 
 a:focus-visible {
-  outline: 3px solid #d5a22f;
+  outline: 3px solid var(--primary);
   outline-offset: 4px;
 }
 
@@ -47,8 +68,12 @@ a:focus-visible {
 
 /* The navigation wraps naturally on smaller screens. */
 .site-header {
-  background: #173f70;
-  border-bottom: 4px solid #e4b542;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--header-bg);
+  border-bottom: 4px solid var(--primary);
+  box-shadow: 0 6px 18px var(--shadow);
 }
 
 .navbar {
@@ -64,8 +89,8 @@ a:focus-visible {
   align-items: center;
   gap: 12px;
   max-width: 280px;
-  color: #fff;
-  font-weight: bold;
+  color: var(--header-text);
+  font-weight: 800;
   text-decoration: none;
 }
 
@@ -74,8 +99,9 @@ a:focus-visible {
   height: 48px;
   object-fit: contain;
   padding: 3px;
-  border-radius: 4px;
-  background: #fff;
+  border-radius: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
 }
 
 .navbar nav {
@@ -86,19 +112,21 @@ a:focus-visible {
 }
 
 .navbar nav a {
-  color: #fff;
+  color: var(--header-text);
   text-decoration: none;
   font-size: 15px;
+  font-weight: 600;
 }
 
 .navbar nav a:hover {
   text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* College welcome section. */
 .hero {
   padding: 52px 0;
-  background: #edf3fa;
+  background: linear-gradient(180deg, #f5efff 0%, var(--bg-strong) 100%);
   text-align: center;
 }
 
@@ -107,10 +135,14 @@ a:focus-visible {
   height: 140px;
   object-fit: contain;
   margin: 0 auto 22px;
+  filter: drop-shadow(0 10px 16px rgba(139, 92, 246, 0.18));
 }
 
 .university-name {
-  color: #4d5e73;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .hero h1 {
@@ -122,6 +154,7 @@ a:focus-visible {
   max-width: 700px;
   margin: 0 auto;
   font-size: 18px;
+  color: var(--muted);
 }
 
 /* All content sections use the same simple spacing. */
@@ -130,7 +163,7 @@ a:focus-visible {
 }
 
 .alternate-section {
-  background: #f3f6fa;
+  background: #f7f3ff;
 }
 
 .section h2 {
@@ -141,15 +174,16 @@ a:focus-visible {
 
 .section-introduction {
   margin-bottom: 28px;
-  color: #4d5e73;
+  color: var(--muted);
   text-align: center;
 }
 
 .card {
   padding: 24px;
-  border: 1px solid #d7dfe8;
-  border-radius: 6px;
-  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: 0 10px 25px rgba(109, 74, 199, 0.04);
 }
 
 .program-grid {
@@ -184,9 +218,10 @@ a:focus-visible {
 /* Faculty groups and individual photos. */
 .directory-note {
   padding: 14px 18px;
-  border-left: 4px solid #e4b542;
-  background: #fff;
+  border-left: 4px solid var(--primary);
+  background: var(--panel);
   font-size: 14px;
+  color: var(--muted);
 }
 
 .department {
@@ -214,7 +249,7 @@ a:focus-visible {
   height: 220px;
   object-fit: cover;
   object-position: center 20%;
-  border-bottom: 1px solid #d7dfe8;
+  border-bottom: 1px solid var(--border);
 }
 
 .person-information {
@@ -231,11 +266,11 @@ a:focus-visible {
 }
 
 .person-role {
-  color: #4d5e73;
+  color: var(--muted);
 }
 
 .person-information .education-note {
-  color: #785a21;
+  color: var(--primary-dark);
   font-size: 13px;
 }
 
@@ -269,7 +304,7 @@ a:focus-visible {
 
 .site-footer {
   padding: 28px 0;
-  background: #173f70;
+  background: linear-gradient(135deg, var(--footer-bg) 0%, var(--primary-dark) 100%);
   color: #fff;
   text-align: center;
 }
